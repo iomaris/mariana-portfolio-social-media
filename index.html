@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mariana Cardoso · Social Media">
+<meta property="og:description" content="Mariana Cardoso: social media em Manaus. Gestão de perfis, design para feed, atendimento no direct e sites para empresas.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<title>Mariana Cardoso Social Media</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mariana Cardoso: social media em Manaus. Gestão de perfis, design para feed, atendimento no direct e sites para empresas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap">
+<style>
+/* Layout: o portfólio antigo (preto, branco, cinza, grade fina) virou um "perfil": stories, feed e direct como linguagem. */
+:root{
+  --bg:#ffffff; --fg:#171719; --card:#f6f6f7; --line:#e4e4e6; --muted:#5f5f64; --soft:#6b6b70;
+  --inv-bg:#171719; --inv-fg:#ffffff; --inv-muted:rgba(255,255,255,.62); --inv-line:rgba(255,255,255,.14);
+  --glass:rgba(255,255,255,.82); --shadow:rgba(23,23,25,.22);
+  --heart:#ff3355;
+  /* o anel de story: único momento colorido da página */
+  --ring:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);
+  --f-sans:"Mulish","Segoe UI",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gut-l:max(20px,env(safe-area-inset-left,0px)); --gut-r:max(20px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113; --fg:#f2f2f3; --card:#18181b; --line:#2a2a2e; --muted:#a3a3a9; --soft:#77777d;
+  --inv-bg:#f2f2f3; --inv-fg:#111113; --inv-muted:rgba(17,17,19,.62); --inv-line:rgba(17,17,19,.14);
+  --glass:rgba(24,24,27,.82); --shadow:rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111113; --fg:#f2f2f3; --card:#18181b; --line:#2a2a2e; --muted:#a3a3a9; --soft:#77777d;
+  --inv-bg:#f2f2f3; --inv-fg:#111113; --inv-muted:rgba(17,17,19,.62); --inv-line:rgba(17,17,19,.14);
+  --glass:rgba(24,24,27,.82); --shadow:rgba(0,0,0,.6); color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+::selection{background:var(--fg);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.03em;line-height:1.02}
+p{margin:0}
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+@media (min-width:640px){:root{--gut-l:max(40px,env(safe-area-inset-left,0px));--gut-r:max(40px,env(safe-area-inset-right,0px))}}
+.eyebrow{font:500 11px/1.4 var(--f-mono);text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+.mono{font-family:var(--f-mono)}
+.hand{font-family:var(--f-hand);font-weight:600}
+.muted{color:var(--muted)}
+.link-line{background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:3px;transition:background-size .45s var(--ease)}
+.link-line:hover{background-size:0 1px;background-position:100% 100%}
+.arrow{display:inline-block;transition:transform .3s var(--ease)}
+a:hover>.arrow{transform:translate(2px,-2px)}
+
+/* botões */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;overflow:hidden;border-radius:999px;background:var(--fg);color:var(--bg);padding:8px 8px 8px 24px;font-weight:800;font-size:14px}
+.btn::before{content:"";position:absolute;inset:0;background:var(--muted);transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn:hover::before{transform:none}
+.btn>*{position:relative}
+.btn .dot{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:color-mix(in srgb,var(--bg) 18%,transparent)}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);background:var(--bg)}
+
+/* barra de progresso + menu */
+.skip{position:fixed;left:16px;top:-60px;z-index:90;padding:10px 16px;border-radius:999px;background:var(--fg);color:var(--bg);font-weight:800;font-size:14px;transition:top .2s}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+#progress{position:fixed;inset:0 0 auto;height:2px;background:var(--fg);transform-origin:left;transform:scaleX(0);z-index:80}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--bg)}
+.nav-wrap{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;justify-content:center;z-index:60;padding-left:var(--gut-l);padding-right:var(--gut-r);pointer-events:none}
+nav.pill{pointer-events:auto;position:relative;display:flex;gap:2px;padding:6px;border:1px solid var(--line);border-radius:999px;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 12px 40px -14px var(--shadow);max-width:100%;overflow-x:auto;scrollbar-width:none}
+nav.pill::-webkit-scrollbar{display:none}
+nav.pill a{position:relative;z-index:1;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap;transition:color .3s}
+nav.pill a:hover{color:var(--fg)}
+nav.pill a.on{color:var(--bg)}
+nav.pill .slider{position:absolute;top:6px;bottom:6px;border-radius:999px;background:var(--fg);transition:left .5s var(--ease),width .5s var(--ease),opacity .3s;opacity:0}
+@media (max-width:520px){nav.pill a{padding:8px 10px;font-size:12px}nav.pill a[href="#experiencia"]{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding-top:calc(110px + env(safe-area-inset-top,0px))}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:72px 72px;opacity:.55;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 15%,transparent 68%);mask-image:radial-gradient(ellipse at 50% 45%,#000 15%,transparent 68%)}
+.hero-grid{position:relative;display:grid;gap:32px;z-index:3}
+@media (min-width:1080px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(860px,calc(100svh - 20px));align-items:center;padding-bottom:60px}}
+.hero h1{font-size:clamp(52px,8vw,96px);font-weight:900;letter-spacing:-.05em;line-height:.93;margin-top:18px}
+.hero h1 .light{display:block;font-weight:300;color:var(--muted)}
+.hero h1 .hand{display:block;width:max-content;font-size:.42em;letter-spacing:0;font-weight:700;color:var(--heart);transform:rotate(-5deg);margin:.25em 0 0 .2em}
+.lede{margin-top:22px;font-size:clamp(19px,2vw,24px);line-height:1.35;color:var(--muted);max-width:30ch}
+.lede strong{color:var(--fg);font-weight:900}
+.hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.live{position:relative;width:8px;height:8px;border-radius:50%;background:#2fbf71;flex:none}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s ease-out infinite}
+@keyframes ping{to{transform:scale(2.6);opacity:0}}
+
+.stage{position:relative;justify-self:center;width:100%;max-width:100%;margin-top:24px}
+@media (min-width:1080px){.stage{position:absolute;bottom:0;left:50%;transform:translateX(-14%);width:auto;height:min(88vh,820px)}}
+.rings{position:absolute;left:50%;top:32%;width:min(118%,760px);aspect-ratio:1;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+.rings span{position:absolute;border-radius:50%;inset:0;border:1px dashed color-mix(in srgb,var(--fg) 14%,transparent);animation:spin 70s linear infinite}
+.rings span:nth-child(2){inset:13%;border-style:solid;border-color:color-mix(in srgb,var(--fg) 8%,transparent);animation-duration:95s;animation-direction:reverse}
+.rings span:nth-child(3){inset:27%;border:0;background:radial-gradient(circle,var(--card),transparent 70%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.char{position:relative;width:min(100%,460px);aspect-ratio:1856/2640;margin-inline:auto;transform-origin:bottom center;transition:transform .6s var(--ease);z-index:1;animation:rise 1.4s var(--ease) .2s both}
+.char>img{width:100%;height:100%;object-fit:contain;object-position:bottom;user-select:none;-webkit-user-drag:none}
+@media (min-width:1080px){.stage{margin-top:0}.char{height:100%;width:auto}}
+@keyframes rise{from{opacity:0;transform:translateY(5vh) scale(1.03);filter:blur(6px)}}
+.eye{position:absolute;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.eye img{position:absolute;max-width:none;transition:transform .15s ease-out}
+.eye img.lid{inset:0;width:100%;height:100%}
+/* notificações flutuando em volta da personagem */
+.notifs{position:absolute;inset:0;z-index:2;pointer-events:none}
+.notif{position:absolute;display:flex;align-items:center;gap:10px;padding:9px 14px 9px 9px;border-radius:16px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 40px -18px var(--shadow);font-size:12.5px;line-height:1.25;max-width:230px;opacity:0;transform:translateY(10px) scale(.96);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.notif.show{opacity:1;transform:none}
+.notif .ico{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--fg);color:var(--bg);font-size:14px}
+.notif .ico.heart{background:var(--heart);color:#fff}
+.notif b{font-weight:800}
+.notif small{display:block;color:var(--muted);font-size:11px}
+.n1{left:-6%;top:30%}.n2{right:-8%;top:18%}.n4{right:-14%;top:58%}
+@media (max-width:700px){.notif{font-size:11.5px;max-width:200px}.n1{left:0;top:42%}.n2{right:0;top:10%}.n4{display:none}}
+/* ---------- faixa ---------- */
+.band{border-block:1px solid var(--line);padding-block:20px;overflow:hidden;background:var(--bg);position:relative;z-index:5}
+.marquee{display:flex;width:max-content;animation:mq 36s linear infinite}
+.marquee.rev{animation-duration:42s;animation-direction:reverse}
+.marquee span{display:flex;align-items:center;white-space:nowrap;font-weight:900;font-size:clamp(40px,6vw,76px);letter-spacing:-.04em;padding-inline:28px}
+.marquee span::after{content:"✦";font-size:.35em;color:var(--soft);margin-left:56px}
+.marquee.rev span{color:transparent;-webkit-text-stroke:1px var(--fg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- destaques (stories) ---------- */
+.highlights{padding-block:56px 8px}
+.hl-row{display:flex;gap:22px;overflow-x:auto;padding:6px 2px 14px;scrollbar-width:thin}
+.hl{flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;width:86px;text-align:center;font-size:12px;font-weight:700}
+.hl .ring{width:80px;height:80px;border-radius:50%;padding:3px;background:var(--ring);transition:transform .4s var(--ease)}
+.hl:hover .ring{transform:scale(1.06) rotate(-4deg)}
+.hl .ring span{display:block;width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);overflow:hidden;background:var(--card)}
+.hl .ring span{display:grid;place-items:center;background:var(--fg);color:var(--bg)}
+.hl svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:22px}
+.hl-head .hand{font-size:24px;color:var(--muted)}
+
+/* ---------- títulos de seção ---------- */
+section{position:relative}
+.sec{padding-block:96px}
+@media (min-width:900px){.sec{padding-block:128px}}
+.sec-head{display:grid;gap:18px;margin-bottom:56px}
+@media (min-width:900px){.sec-head{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end;gap:64px}}
+.sec-head h2{font-size:clamp(40px,5.5vw,64px);font-weight:900}
+.sec-head p{max-width:56ch;color:var(--muted);font-size:17px}
+#cases .sec-head{margin-bottom:clamp(80px,10vw,140px)}
+.alt{background:var(--card);border-block:1px solid var(--line)}
+
+/* ---------- CASES ---------- */
+.case{display:grid;gap:56px;padding-bottom:110px}
+.case+.case{padding-top:110px;border-top:1px solid var(--line)}
+.case-top{display:grid;gap:40px}
+@media (min-width:1000px){.case-top{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:start}}
+.case h3{font-size:clamp(36px,4.6vw,58px);font-weight:900}
+.case .sum{margin-top:18px;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:var(--muted);max-width:52ch}
+.case .sum strong{color:var(--fg)}
+.facts{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--line)}
+.facts div{padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+.facts dt{font:500 10px/1.4 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.facts dd{margin:4px 0 0;font-weight:800;font-size:15px}
+.links{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 26px;font-weight:800;font-size:14px}
+.story-block{margin-top:40px;display:grid;gap:26px}
+.story-block h4{margin:0 0 6px;font:500 11px/1.4 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.story-block p{color:var(--muted);max-width:60ch}
+.story-block ul{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted)}
+.story-block li{display:flex;gap:12px}
+.story-block li::before{content:"";flex:none;width:12px;height:1px;background:var(--soft);margin-top:.8em}
+.story-block li b{color:var(--fg)}
+
+/* celular com o feed */
+.phone-col{position:relative;display:flex;justify-content:center}
+@media (min-width:1000px){.phone-col{position:sticky;top:96px}}
+.phone{position:relative;width:min(340px,100%);border-radius:46px;padding:11px;background:#0d0d0f;box-shadow:0 50px 90px -30px var(--shadow),inset 0 0 0 2px #2b2b30;transition:transform .6s var(--ease)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:92px;height:24px;border-radius:20px;background:#0d0d0f;transform:translateX(-50%);z-index:3}
+.screen{border-radius:36px;background:#fff;height:640px;overflow-y:auto;scrollbar-width:none}
+.screen img{width:100%}
+.screen::-webkit-scrollbar{display:none}
+.note{position:absolute;font-family:var(--f-hand);font-size:22px;line-height:1.05;color:var(--muted);max-width:170px;pointer-events:none}
+.note svg{display:block;margin-top:4px;stroke:currentColor;fill:none;stroke-width:1.6}
+.note.n-left{left:-6px;top:120px;transform:rotate(-5deg)}
+.note.n-right{right:-14px;bottom:110px;transform:rotate(4deg);text-align:right}
+@media (max-width:1240px){.note{display:none}}
+
+/* blocos de entregas */
+.deliver{display:grid;gap:22px}
+@media (min-width:900px){.deliver{grid-template-columns:repeat(12,minmax(0,1fr))}}
+.tile{position:relative;border:1px solid var(--line);border-radius:28px;background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:18px;min-width:0;overflow:hidden}
+.alt .tile{background:var(--bg)}
+.tile h5{margin:0;font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.tile p{color:var(--muted);font-size:15px}
+.span-12{grid-column:span 12}.span-7{grid-column:span 7}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-4{grid-column:span 4}.span-8{grid-column:span 8}
+@media (max-width:899px){[class*="span-"]{grid-column:auto}}
+
+/* faixa horizontal de posts */
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:-4px;padding-inline:4px;scrollbar-width:thin}
+.strip button{flex:none;width:min(240px,62vw);scroll-snap-align:start;border-radius:16px;overflow:hidden;border:1px solid var(--line);transition:transform .45s var(--ease),box-shadow .45s}
+.strip button:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 26px 40px -22px var(--shadow)}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover}
+
+/* direct */
+.dm{border-radius:22px;background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:340px}
+.dm-top{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.dm-top .av{width:34px;height:34px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-weight:900;font-size:12px}
+.dm-top b{font-size:14px}.dm-top small{display:block;font-size:11px;color:#2fbf71;font-weight:700}
+.msg{max-width:82%;padding:9px 13px;border-radius:18px;font-size:14px;line-height:1.4;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .5s var(--ease)}
+.msg.in{align-self:flex-start;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg.out{align-self:flex-end;background:var(--fg);color:var(--bg);border-bottom-right-radius:6px}
+.msg.show{opacity:1;transform:none}
+.typing{align-self:flex-end;display:none;gap:4px;padding:12px 14px;border-radius:18px;background:var(--fg)}
+.typing.show{display:flex}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--bg);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{50%{opacity:.25}}
+.dm-foot{margin-top:auto;font:500 10px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.replay{align-self:flex-start;font-size:13px;font-weight:800}
+
+/* antes e depois */
+.ba{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:910/1287;max-height:780px;margin-inline:auto;width:100%;max-width:552px;background:var(--card);touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .before{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-1px);pointer-events:none}
+.ba .handle::after{content:"↔";position:absolute;top:50%;left:50%;width:42px;height:42px;border-radius:50%;background:#fff;color:#171719;display:grid;place-items:center;transform:translate(-50%,-50%);font-weight:900;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .lbl{position:absolute;top:12px;padding:4px 10px;border-radius:999px;background:rgba(17,17,19,.78);color:#fff;font:500 10px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.ba .lbl.l{left:12px}.ba .lbl.r{right:12px}
+.changes{display:grid;gap:12px;counter-reset:c}
+.changes li{list-style:none;display:grid;grid-template-columns:28px 1fr;gap:10px;color:var(--muted);font-size:15px}
+.changes li::before{counter-increment:c;content:counter(c);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);font:500 11px var(--f-mono);color:var(--fg)}
+.changes b{color:var(--fg)}
+.changes{padding:0;margin:0}
+
+/* cartão de site */
+.site-card{display:block;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:var(--bg);transition:transform .5s var(--ease),box-shadow .5s}
+.site-card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -30px var(--shadow)}
+.site-card .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.site-card .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.site-card .bar span{margin-left:8px;font:400 11px var(--f-mono);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.site-card .body{padding:34px 26px;display:grid;gap:14px;background:radial-gradient(circle at 80% 0%,var(--card),transparent 60%)}
+.site-card .body b{font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+.site-card .go{font-weight:800;font-size:14px;display:inline-flex;gap:6px}
+
+/* Pioneira: anatomia do anúncio */
+.ad{position:relative;border-radius:22px;background:var(--inv-bg);color:var(--inv-fg);padding:26px;display:grid;gap:14px;align-content:space-between;aspect-ratio:4/5;max-width:420px;width:100%;margin-inline:auto;overflow:hidden}
+.ad::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,var(--inv-line) 22px 23px);opacity:.7}
+.ad>*{position:relative}
+.ad .slot{border:1px dashed var(--inv-line);border-radius:14px;padding:12px 14px}
+.ad .slot small{display:block;font:500 10px/1.4 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--inv-muted)}
+.ad .slot b{font-size:clamp(18px,2.2vw,24px);line-height:1.15;letter-spacing:-.02em}
+.ad .big{flex:1;display:grid;align-content:center}
+.ad .big b{font-size:clamp(26px,3.4vw,38px);font-weight:900}
+.ad .cta{justify-self:start;align-self:end;display:inline-flex;align-items:center;line-height:1;border-radius:999px;background:var(--inv-fg);color:var(--inv-bg);padding:9px 16px;font-weight:900;font-size:13px}
+.ad-wrap{display:grid;gap:12px;justify-items:center}
+
+/* ---------- galeria ---------- */
+.rail{overflow-x:auto;scrollbar-width:none;padding-block:6px 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rail-track{display:flex;gap:24px;width:max-content;padding-left:24px;animation:rail 60s linear infinite}
+.rail:hover .rail-track,.rail:focus-within .rail-track{animation-play-state:paused}
+.rail::-webkit-scrollbar{display:none}
+@keyframes rail{to{transform:translateX(-50%)}}
+.work{flex:none;width:min(300px,74vw);display:flex;flex-direction:column;gap:12px;text-align:left}
+.work .cover{position:relative;display:block;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--cbg);color:var(--cfg);transition:transform .5s var(--ease),box-shadow .5s}
+.work:hover .cover,.work:focus-visible .cover{transform:translateY(-8px);box-shadow:0 30px 50px -28px var(--shadow)}
+.work .cover::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 100%,color-mix(in srgb,var(--cac) 35%,transparent),transparent 60%)}
+.work .c-name{position:absolute;left:22px;right:22px;top:20px;font-size:30px;font-weight:900;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.work .c-n{position:absolute;z-index:2;left:16px;bottom:16px;padding:6px 10px;border-radius:999px;background:var(--cbg);font:500 10px/1.3 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cac)}
+.work .c-stack{position:absolute;right:-6%;bottom:-8%;width:68%;aspect-ratio:1}
+.work .c-stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 18px 30px -10px rgba(0,0,0,.45);transition:transform .6s var(--ease)}
+.work .c-stack img:nth-child(1){transform:rotate(-14deg) translate(-26%,-4%)}
+.work .c-stack img:nth-child(2){transform:rotate(-5deg) translate(-12%,-2%)}
+.work .c-stack img:last-child{transform:rotate(4deg)}
+.work:hover .c-stack img:nth-child(1){transform:rotate(-20deg) translate(-40%,-8%)}
+.work:hover .c-stack img:nth-child(2){transform:rotate(-8deg) translate(-20%,-5%)}
+.work:hover .c-stack img:last-child{transform:rotate(6deg) translate(4%,-4%)}
+.work h4{margin:0;font-size:19px;font-weight:900;letter-spacing:-.02em;line-height:1.15}
+.work p{font-size:14px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.rail{overflow-x:auto}}
+
+/* ---------- processo ---------- */
+.steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid var(--line)}
+.step{padding:26px 22px 30px 0;border-bottom:1px solid var(--line);display:grid;gap:12px;align-content:start}
+.step .n{font:500 11px var(--f-mono);color:var(--soft);letter-spacing:.14em}
+.step h4{margin:0;font-size:22px;font-weight:900;letter-spacing:-.02em}
+.step p{color:var(--muted);font-size:15px}
+.step .hand{font-size:20px;color:var(--fg);opacity:.75}
+
+/* ---------- habilidades ---------- */
+.skills{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.skill{border:1px solid var(--line);border-radius:26px;padding:28px;background:var(--bg);transition:transform .5s var(--ease),border-color .4s}
+.skill:hover{transform:translateY(-6px);border-color:var(--fg)}
+.skill h4{margin:26px 0 18px;font-size:24px;font-weight:900;letter-spacing:-.02em}
+.skill ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.skill li{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);transition:all .3s}
+.skill li:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+/* ---------- experiência ---------- */
+.two{display:grid;gap:48px}
+@media (min-width:900px){.two{grid-template-columns:300px minmax(0,1fr);gap:64px}}
+.timeline{position:relative;padding-left:30px;display:grid;gap:52px}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--line)}
+.timeline .fill{position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--fg);transform-origin:top;transform:scaleY(0)}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-35px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--fg);box-shadow:0 0 0 3px var(--bg)}
+.job h4{margin:6px 0 2px;font-size:clamp(24px,2.6vw,30px);font-weight:900;letter-spacing:-.02em}
+.job .co{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted)}
+.job ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted)}
+.job li{display:flex;gap:12px}.job li::before{content:"";flex:none;width:12px;height:1px;background:var(--soft);margin-top:.8em}
+
+/* ---------- sobre ---------- */
+.about-big{font-size:clamp(28px,3.8vw,48px);font-weight:300;line-height:1.18;letter-spacing:-.025em;max-width:24ch}
+.about-big strong{font-weight:900}
+.about-cols{margin-top:36px;display:grid;gap:20px;color:var(--muted);max-width:820px}
+@media (min-width:760px){.about-cols{grid-template-columns:1fr 1fr}}
+
+/* ---------- contato ---------- */
+.contact{background:var(--inv-bg);color:var(--inv-fg);overflow:hidden;padding-block:110px 40px}
+.contact::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--inv-line) 1px,transparent 1px),linear-gradient(to bottom,var(--inv-line) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%);opacity:.6;pointer-events:none}
+.contact .wrap{position:relative}
+.contact .eyebrow{color:var(--inv-muted)}
+.contact h2{font-size:clamp(56px,12vw,150px);font-weight:900;letter-spacing:-.055em;line-height:.9;margin-top:22px}
+.contact h2 span{display:inline-block;transition:transform .5s var(--ease)}
+.contact h2:hover span{transform:translateY(-.1em)}
+.mail{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.mail .addr{font-size:clamp(20px,3vw,36px);font-weight:300;user-select:all;overflow-wrap:anywhere}
+.copy{border:1px solid var(--inv-line);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;color:var(--inv-fg);transition:background .3s}
+.copy:hover{background:var(--inv-line)}
+.socials{margin-top:46px;display:flex;flex-wrap:wrap;gap:14px 30px;font-weight:800;font-size:15px}
+.socials a{color:var(--inv-muted);transition:color .3s}
+.socials a:hover{color:var(--inv-fg)}
+.foot{margin-top:90px;padding-top:22px;border-top:1px solid var(--inv-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font:500 10px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--inv-muted)}
+
+/* ---------- viewer estilo story ---------- */
+.viewer{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:rgba(10,10,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;transition:opacity .35s}
+.viewer.open{opacity:1}
+[hidden]{display:none!important}
+.v-card{position:relative;width:min(100%,calc((100svh - 140px) * .8),620px);display:grid;gap:12px;color:#fff}
+.v-bars{display:flex;gap:4px}
+.v-bars i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.28);overflow:hidden}
+.v-bars i b{display:block;height:100%;width:0;background:#fff}
+.v-bars i.done b{width:100%}
+.v-head{display:flex;align-items:center;gap:10px}
+.v-head .av{width:34px;height:34px;border-radius:50%;padding:2px;background:var(--ring)}
+.v-head .av img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid #111}
+.v-head b{font-size:14px}.v-head small{display:block;font-size:11px;color:rgba(255,255,255,.6)}
+.v-head .x{margin-left:auto;width:40px;height:40px;border-radius:50%;font-size:22px;color:#fff;display:grid;place-items:center}
+.v-head .x:hover{background:rgba(255,255,255,.12)}
+.v-media{position:relative;border-radius:16px;overflow:hidden;background:#000;display:grid;place-items:center;max-height:calc(100svh - 200px)}
+.v-media img{width:100%;max-height:calc(100svh - 200px);object-fit:contain}
+.v-tap{position:absolute;top:0;bottom:0;width:40%;z-index:2}
+.v-tap.prev{left:0;cursor:w-resize}.v-tap.next{right:0;cursor:e-resize}
+.v-cap{font-size:14px;color:rgba(255,255,255,.82);min-height:1.5em}
+.v-nav{display:flex;justify-content:space-between;gap:10px}
+.v-nav button{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 16px;color:#fff;font-size:13px;font-weight:800}
+.v-nav button:hover{background:rgba(255,255,255,.12)}
+
+/* ---------- cursor ---------- */
+.cursor{position:fixed;left:0;top:0;z-index:300;pointer-events:none;mix-blend-mode:difference;display:none}
+.cursor div{width:26px;height:26px;border-radius:50%;border:1px solid #fff;display:grid;place-items:center;font:500 10px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#000;transition:width .3s var(--ease),height .3s var(--ease),background .3s}
+.cursor.hover div{width:46px;height:46px}
+.cursor.label div{width:78px;height:78px;background:#fff}
+@media (pointer:fine){.cursor{display:block}}
+
+/* entrada ao rolar: só para o que está abaixo da dobra no carregamento */
+.pre{opacity:0;transform:translateY(34px);filter:blur(5px)}
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0ms)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .pre{opacity:1;transform:none;filter:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+
+<div id="progress"></div>
+<div class="cursor" aria-hidden="true"><div></div></div>
+
+<a class="skip" href="#cases">Pular para o conteúdo</a>
+<div class="nav-wrap">
+  <nav class="pill" aria-label="Seções">
+    <span class="slider"></span>
+    <a href="#cases">Cases</a>
+    <a href="#criacoes">Criações</a>
+    <a href="#processo">Processo</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div style="max-width:560px">
+      <p class="eyebrow">Social media · Design para feed · Atendimento</p>
+      <h1><span class="light">Oi, eu sou a</span>Mariana.<span class="hand">@ioomaris</span></h1>
+      <p class="lede">Eu cuido do perfil da sua marca <strong>do primeiro post até a resposta no direct.</strong></p>
+      <div class="hero-cta">
+        <a class="btn" href="#contato" data-cursor="Oi!"><span>Vamos conversar</span><span class="dot">→</span></a>
+        <a class="link-line" href="#cases" style="font-weight:800;font-size:14px">Ver os cases</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage" aria-hidden="false">
+    <div class="rings" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="char" id="char">
+      <img src="img/char/mariana-celular.webp" alt="Personagem 3D da Mariana, de camisa branca, segurando um celular com um perfil do Instagram na tela" draggable="false">
+      <div class="eye" data-box="700,598,156,104" data-iris="48,3,98" style="-webkit-mask-image:url(img/char/mask-L.png);mask-image:url(img/char/mask-L.png)" aria-hidden="true">
+        <img class="iris" src="img/char/iris-L.webp" alt=""><img class="lid" src="img/char/lid-L.webp" alt="">
+      </div>
+      <div class="eye" data-box="996,598,171,103" data-iris="15,1,98" style="-webkit-mask-image:url(img/char/mask-R.png);mask-image:url(img/char/mask-R.png)" aria-hidden="true">
+        <img class="iris" src="img/char/iris-R.webp" alt=""><img class="lid" src="img/char/lid-R.webp" alt="">
+      </div>
+    </div>
+    <div class="notifs" aria-hidden="true">
+      <div class="notif n1"><span class="ico heart">♥</span><span><b>magpecaseservicos</b> curtiu sua arte<small>agora</small></span></div>
+      <div class="notif n2"><span class="ico">✉</span><span><b>Nova mensagem</b> "Vocês têm bico injetor K38?"<small>direct · 2 min</small></span></div>
+      <div class="notif n4"><span class="ico">✓</span><span><b>Carrossel publicado</b> 7 slides, agendado 18h<small>Meta Business Suite</small></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="band" aria-hidden="true">
+  <div class="marquee"><span>Gestão de perfis</span><span>Carrosséis</span><span>Stories</span><span>Atendimento no direct</span><span>Calendário de posts</span><span>Gestão de perfis</span><span>Carrosséis</span><span>Stories</span><span>Atendimento no direct</span><span>Calendário de posts</span></div>
+  <div class="marquee rev"><span>Canva</span><span>Figma</span><span>Copy</span><span>Anúncios</span><span>Sites</span><span>Identidade visual</span><span>Canva</span><span>Figma</span><span>Copy</span><span>Anúncios</span><span>Sites</span><span>Identidade visual</span></div>
+</div>
+
+<!-- DESTAQUES -->
+<section class="highlights" aria-label="Destaques">
+  <div class="wrap">
+    <div class="hl-head">
+      <p class="eyebrow">Destaques</p>
+      <p class="hand">toque num círculo e veja como story ↓</p>
+    </div>
+    <div class="hl-row" id="hlRow"></div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="sec" id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><h2>Dois perfis, do zero ao no ar.</h2></div>
+      <p>Cuidei da comunicação de duas empresas de Manaus que vendem para outras empresas: peças para motor e andaimes. Público técnico, que quer resposta rápida e informação certa. Em cada uma fiz o perfil e o site falarem a mesma língua.</p>
+    </div>
+
+    <!-- CASE MAG -->
+    <article class="case" id="case-mag">
+      <div class="case-top">
+        <div class="rv">
+          <h3>MAG Peças e Serviços</h3>
+          <p class="sum">Loja de peças para motores Cummins que vendia bem no balcão, mas quase não aparecia no Instagram. Assumi o perfil inteiro: <strong>o que postar, como postar e quem responde quem chama.</strong></p>
+          <dl class="facts">
+            <div><dt>Segmento</dt><dd>Peças diesel · B2B</dd></div>
+            <div><dt>Meu papel</dt><dd>Social media</dd></div>
+            <div><dt>Canais</dt><dd>Instagram, WhatsApp, site</dd></div>
+            <div><dt>Perfil hoje</dt><dd>176 posts · 305 seguidores</dd></div>
+          </dl>
+          <div class="links">
+            <a class="link-line" href="https://www.instagram.com/magpecaseservicos/" target="_blank" rel="noopener noreferrer">@magpecaseservicos <span class="arrow">↗</span></a>
+            <a class="link-line" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer">magpecaseservicos.com.br <span class="arrow">↗</span></a>
+          </div>
+
+          <div class="story-block">
+            <div>
+              <h4>O desafio</h4>
+              <p>Quem procura peça de motor sabe o que quer e só precisa saber se tem e quanto custa. O perfil precisava mostrar o estoque com cara de marca séria e virar conversa.</p>
+            </div>
+            <div>
+              <h4>O que eu fiz</h4>
+              <ul>
+                <li><span><b>Linha visual própria</b> no azul da marca, para cada peça parecer parte de uma coleção.</span></li>
+                <li><span><b>Série de produtos:</b> um post por peça, com contato sempre no mesmo lugar.</span></li>
+                <li><span><b>Datas e avisos</b> de feriado e horário com o mesmo cuidado visual.</span></li>
+                <li><span><b>Atendimento</b> no direct e WhatsApp, do primeiro contato ao orçamento.</span></li>
+                <li><span><b>Catálogo impresso</b> de peças Cummins redesenhado.</span></li>
+                <li><span><b>Site</b> atualizado com os mesmos serviços e contatos do perfil.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4>O que mudou</h4>
+              <p>O perfil ganhou uma identidade reconhecível no feed, e os clientes passaram a pedir orçamento pelo direct citando o post da peça.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-col rv" style="--d:120ms">
+          <p class="note n-left">o perfil real,<br>hoje<svg width="90" height="40" viewBox="0 0 90 40"><path d="M4 6 C 30 4, 60 14, 84 34 M84 34 l-10 -2 M84 34 l-2 -10"/></svg></p>
+          <div class="phone" id="phoneMag">
+            <div class="screen" role="region" aria-label="Perfil real da MAG no Instagram" tabindex="0"><img src="img/mag/perfil-real.webp" alt="Print do perfil @magpecaseservicos no Instagram: 176 posts, 305 seguidores, destaques Sobre a MAG, Localização e Contato, e posts de Dia dos Pais, troca de filtros, nova marca, Boas Festas, Dia do Cliente e Independência"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deliver">
+        <div class="tile span-12 rv">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline">
+            <div><h5>Uma peça por post, sempre no mesmo lugar.</h5></div>
+          </div>
+          <div class="strip" id="magStrip"></div>
+        </div>
+
+        <div class="tile span-5 rv">
+          <h5>Quem chama, recebe resposta.</h5>
+          <div class="dm" id="dm">
+            <div class="dm-top"><span class="av">MAG</span><span><b>magpecaseservicos</b><small>online</small></span></div>
+            <p class="msg in">Boa tarde! Vi o post do bico injetor K38. Tem pra pronta entrega?</p>
+            <p class="msg out">Boa tarde! Tem sim 😊 Me passa o número do motor que eu confiro a referência certinha com o balcão.</p>
+            <p class="msg in">KTA38, uso em gerador.</p>
+            <p class="msg out">Perfeito, essa é a peça. Te mando o orçamento pelo WhatsApp em 5 min, pode ser?</p>
+            <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            <button class="replay link-line" type="button" hidden>Ver de novo ↺</button>
+            <p class="dm-foot">Conversa ilustrativa do tipo de atendimento</p>
+          </div>
+          <p>Meu fluxo: responder rápido, confirmar a referência da peça com o balcão antes de prometer, e levar a negociação para o WhatsApp da loja com tudo anotado.</p>
+        </div>
+
+        <div class="tile span-7 rv">
+          <h5>Feriado avisado com cuidado de marca.</h5>
+          <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));align-items:start">
+            <button class="open-one" data-set="aparecida" style="border-radius:16px;overflow:hidden;border:1px solid var(--line)" data-cursor="Abrir"><img src="img/mag/aparecida.webp" alt="Post de 12 de outubro, Dia de Nossa Senhora Aparecida, avisando que a MAG não abre no feriado" loading="lazy"></button>
+            <div style="display:grid;gap:12px">
+              <p>O post de 12 de outubro faz duas coisas: homenageia uma data importante para o público e responde a dúvida prática antes dela chegar. Quando fecha, quando volta e a que horas.</p>
+              <p>Tipografia em azul da marca, a imagem recortada sobre um arco e as informações-chave em negrito: <b>12 de outubro</b>, <b>13 de outubro</b>, <b>7h50</b>.</p>
+              <p class="hand" style="font-size:22px;color:var(--fg)">menos ligação de "abre amanhã?"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile span-7 rv">
+          <h5>Peças para motores Cummins: antes e depois.</h5>
+          <div class="ba" id="ba" style="--p:50%">
+            <img class="after" src="img/mag/catalogo-v2.webp" alt="Catálogo novo da MAG, com motor em vermelho, ícones, mais marcas distribuídas e rodapé de contatos" loading="lazy">
+            <img class="before" src="img/mag/catalogo-v1.webp" alt="Primeira versão do catálogo da MAG, com fundo branco e motor cinza" loading="lazy">
+            <span class="handle"></span>
+            <span class="lbl l">Antes</span><span class="lbl r">Depois</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o catálogo antes e depois">
+          </div>
+        </div>
+        <div class="tile span-5 rv">
+          <h5>O que mudou na segunda versão</h5>
+          <ol class="changes">
+            <li><span><b>Topo escuro com o motor em destaque,</b> para o catálogo chamar atenção no balcão e no WhatsApp.</span></li>
+            <li><span><b>Quatro ícones de confiança:</b> linha completa, qualidade, +5.000 itens e atendimento especializado.</span></li>
+            <li><span><b>Frase de segmentos</b> (energia, marítimo, mineração, construção, indústria) para quem lê saber na hora se é para ele.</span></li>
+            <li><span><b>Marcas distribuídas em grade:</b> de 4 para 9 logos, incluindo Delphi, Mahle e S&amp;S.</span></li>
+            <li><span><b>Rodapé de contatos</b> com endereço, telefones e e-mails separados, fácil de achar.</span></li>
+          </ol>
+          <a class="site-card" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer" data-cursor="Abrir" style="margin-top:auto">
+            <div class="bar"><i></i><i></i><i></i><span>magpecaseservicos.com.br</span></div>
+            <div class="body"><b>O mesmo cuidado, agora no site.</b><span class="go">Abrir site <span class="arrow">↗</span></span></div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE PIONEIRA -->
+    <article class="case" id="case-pioneira">
+      <div class="case-top">
+        <div class="rv">
+          <h3>Pioneira Andaimes &amp; Equipamentos</h3>
+          <p class="sum">Locação de andaimes e equipamentos para obra. Num contrato curto, a missão foi <strong>colocar anúncios no ar e dar à empresa um site que passasse confiança.</strong></p>
+          <dl class="facts">
+            <div><dt>Segmento</dt><dd>Locação · construção</dd></div>
+            <div><dt>Meu papel</dt><dd>Anúncios + site</dd></div>
+            <div><dt>Duração</dt><dd>3 meses</dd></div>
+          </dl>
+          <div class="links">
+            <a class="link-line" href="https://www.instagram.com/pioneiraae/" target="_blank" rel="noopener noreferrer">@pioneiraae <span class="arrow">↗</span></a>
+            <a class="link-line" href="https://mdvdearaujo.com.br/" target="_blank" rel="noopener noreferrer">Site da Pioneira <span class="arrow">↗</span></a>
+          </div>
+          <div class="story-block">
+            <div>
+              <h4>O desafio</h4>
+              <p>Quem aluga andaime está com a obra esperando e decide rápido. O anúncio precisava responder em segundos: o que tem, por quanto tempo e como pedir.</p>
+            </div>
+            <div>
+              <h4>O que eu fiz</h4>
+              <ul>
+                <li><span><b>Posts de anúncio</b> para os equipamentos, com gancho direto para o problema da obra.</span></li>
+                <li><span><b>Estrutura fixa</b> de gancho, oferta, prova e chamada em todos os anúncios.</span></li>
+                <li><span><b>Site da empresa</b> com os equipamentos e o contato a um toque.</span></li>
+                <li><span><b>Atendimento</b> e controle das locações, que deram o vocabulário certo aos anúncios.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4>O que eu levei daqui</h4>
+              <p>Em contrato curto, vale deixar algo que continue funcionando. A estrutura dos anúncios e o site ficaram com a empresa, prontos para reaproveitar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ad-wrap rv" style="--d:120ms">
+          <div class="ad" aria-label="Estrutura dos anúncios da Pioneira">
+            <div class="slot"><small>1 · Gancho</small><b>A obra não pode parar.</b></div>
+            <div class="big slot"><small>2 · Oferta</small><b>Andaimes e equipamentos para locação</b></div>
+            <div class="slot"><small>3 · Prova</small><b>Por dia, semana ou mês. Entrega combinada.</b></div>
+            <span class="cta">4 · Peça seu orçamento →</span>
+          </div>
+          <p class="hand muted" style="font-size:21px;text-align:center">o esqueleto que eu usava em todo anúncio</p>
+        </div>
+      </div>
+      <div class="deliver">
+        <a class="site-card span-6 rv" href="https://mdvdearaujo.com.br/" target="_blank" rel="noopener noreferrer" data-cursor="Abrir">
+          <div class="bar"><i></i><i></i><i></i><span>mdvdearaujo.com.br</span></div>
+          <div class="body"><b>Pioneira Andaimes &amp; Equipamentos</b><span class="muted" style="font-size:15px">Apresenta a empresa, os equipamentos e leva direto ao contato.</span><span class="go">Abrir site <span class="arrow">↗</span></span></div>
+        </a>
+        <a class="site-card span-6 rv" style="--d:100ms" href="https://www.instagram.com/pioneiraae/" target="_blank" rel="noopener noreferrer" data-cursor="Abrir">
+          <div class="bar"><i></i><i></i><i></i><span>instagram.com/pioneiraae</span></div>
+          <div class="body"><b>Os posts de anúncio no perfil</b><span class="muted" style="font-size:15px">Veja os anúncios publicados direto no Instagram da Pioneira.</span><span class="go">Abrir perfil <span class="arrow">↗</span></span></div>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CRIAÇÕES -->
+<section class="sec alt" id="criacoes">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><h2>Mais coisas que eu desenhei.</h2></div>
+      <p>Carrosséis de notícia, séries para um programa de pós-graduação, material de evento, impressos e marca. Cada capa abre como story: toque nas laterais para passar.</p>
+    </div>
+  </div>
+  <div class="rail" aria-label="Criações"><div class="rail-track" id="works"></div></div>
+</section>
+
+<!-- PROCESSO -->
+<section class="sec" id="processo">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><h2>Como eu cuido de um perfil.</h2></div>
+      <p>O mesmo caminho em todo cliente. A ordem importa: não dá para criar bem sem saber o que a empresa vende e quem pergunta o quê.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><h4>Escuta</h4><p>Converso com quem atende o balcão. As perguntas que mais chegam viram a primeira pauta.</p><span class="hand">"qual a peça mais pedida?"</span></div>
+      <div class="step rv" style="--d:80ms"><span class="n">02</span><h4>Calendário</h4><p>Monto a semana: produto, aviso, bastidor e data comemorativa, com dia e horário de cada post.</p><span class="hand">seg · qua · sex</span></div>
+      <div class="step rv" style="--d:160ms"><span class="n">03</span><h4>Criação</h4><p>Arte no Canva ou Figma seguindo a linha visual da marca, mais a legenda com a chamada certa.</p><span class="hand">mesmo grid, sempre</span></div>
+      <div class="step rv" style="--d:240ms"><span class="n">04</span><h4>Publicação</h4><p>Agendo no Meta Business Suite, reviso telefone, endereço e nome da peça antes de sair.</p><span class="hand">conferir 2x</span></div>
+      <div class="step rv" style="--d:320ms"><span class="n">05</span><h4>Direct e leitura</h4><p>Respondo quem chama e anoto o que gerou conversa. Isso volta para o calendário da próxima semana.</p><span class="hand">o ciclo recomeça ↺</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section class="sec alt" id="habilidades">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><h2>O que vem no meu celular e note.</h2></div>
+      <p>Uma social media que também sabe construir o site e organizar o administrativo: menos gente para a empresa coordenar.</p>
+    </div>
+    <div class="skills">
+      <div class="skill rv"><span class="mono muted" style="font-size:12px">Conteúdo</span><h4>Social media</h4><ul><li>Planejamento de pauta</li><li>Calendário editorial</li><li>Copy e legendas</li><li>Carrosséis</li><li>Stories</li><li>Posts de anúncio</li><li>Meta Business Suite</li></ul></div>
+      <div class="skill rv" style="--d:100ms"><span class="mono muted" style="font-size:12px">Visual</span><h4>Design</h4><ul><li>Canva</li><li>Figma</li><li>Identidade visual</li><li>Logo</li><li>Catálogo e flyer</li><li>Etiquetas e crachás</li><li>CapCut</li></ul></div>
+      <div class="skill rv" style="--d:200ms"><span class="mono muted" style="font-size:12px">Relacionamento</span><h4>Atendimento</h4><ul><li>Direct e WhatsApp Business</li><li>Orçamentos</li><li>Respostas padrão</li><li>Pós-venda</li><li>CRM</li></ul></div>
+      <div class="skill rv" style="--d:300ms"><span class="mono muted" style="font-size:12px">Web</span><h4>Sites</h4><ul><li>HTML, CSS e JavaScript</li><li>Angular (em formação)</li><li>Sites empresariais</li><li>Publicação na Vercel</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA + SOBRE -->
+<section class="sec" id="experiencia">
+  <div class="wrap two">
+    <div class="rv"><h2 style="font-size:clamp(40px,5.5vw,64px);font-weight:900">Onde eu já estive.</h2></div>
+    <div class="timeline" id="timeline">
+      <span class="fill"></span>
+      <article class="job rv">
+        <p class="eyebrow">abr. – out. 2026</p>
+        <h4>Social media e assistente fiscal</h4>
+        <p class="co">MAG Peças e Serviços</p>
+        <ul><li>Gestão do Instagram: pauta, artes, legendas e publicação</li><li>Atendimento a clientes no direct e no WhatsApp</li><li>Redesign do catálogo de peças Cummins e atualização do site</li><li>Emissão e conferência de notas fiscais</li></ul>
+      </article>
+      <article class="job rv">
+        <p class="eyebrow">fev. – abr. 2026</p>
+        <h4>Anúncios, site e atendimento</h4>
+        <p class="co">Pioneira Andaimes &amp; Equipamentos <span class="chip mono" style="font-size:10px;letter-spacing:.12em">Temporário</span></p>
+        <ul><li>Posts de anúncio para locação de equipamentos</li><li>Site da empresa em HTML, CSS e JavaScript</li><li>Atendimento ao cliente e controle de locações</li></ul>
+      </article>
+      <article class="job rv">
+        <p class="eyebrow">2023 – 2025</p>
+        <h4>Design para projetos escolares e acadêmicos</h4>
+        <p class="co">Jornal CMC · PPGCASA · Intergreve · turma de Informática</p>
+        <ul><li>Carrosséis de notícia para o jornal da escola</li><li>Série de divulgação das disciplinas do PPGCASA</li><li>Identidade, adesivo e crachá do Intergreve 2024</li></ul>
+      </article>
+      <article class="job rv">
+        <p class="eyebrow">jul. 2025 – fev. 2026</p>
+        <h4>Auxiliar de escritório</h4>
+        <p class="co">Live Academia</p>
+        <ul><li>Organização de informações e arquivos</li><li>Suporte interno no uso de sistemas</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="sobre">
+  <div class="wrap two">
+    <div class="rv"><h2 style="font-size:clamp(40px,5.5vw,64px);font-weight:900">Sobre mim</h2></div>
+    <div>
+      <p class="about-big rv">Cresci vendo minha família empreender. Por isso <strong>eu escrevo para quem compra, não para quem curte.</strong></p>
+      <div class="about-cols">
+        <p class="rv" style="--d:100ms">Aprendi cedo como um negócio funciona por dentro: o cliente que liga, a papelada, o caixa. Hoje uso isso no Instagram das empresas. Antes de criar, eu entendo o que a loja vende e o que o cliente pergunta.</p>
+        <p class="rv" style="--d:200ms">Sou técnica em Informática pelo IFAM e sigo estudando desenvolvimento web. Essa mistura me deixa cuidar do perfil, do site e do atendimento sem que nada fique desencontrado.</p>
+      </div>
+      <p class="rv mono muted" style="--d:300ms;margin-top:30px;font-size:11px;letter-spacing:.16em;text-transform:uppercase">Fora do trabalho: livros · xadrez · corrida</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+        <h2 class="rv" id="talk" aria-label="Bora pro direct?">Bora pro direct?</h2>
+    <div class="mail rv">
+      <span class="addr" id="addr">maryazevedo2036@gmail.com</span>
+      <button class="copy" type="button" id="copyBtn">Copiar e-mail</button>
+    </div>
+    <div class="socials rv">
+      <a href="https://www.instagram.com/ioomaris" target="_blank" rel="noopener noreferrer">Instagram <span class="arrow">↗</span></a>
+      <a href="https://wa.me/5592993618244" target="_blank" rel="noopener noreferrer">WhatsApp <span class="arrow">↗</span></a>
+      <a href="https://linkedin.com/in/mariana-cardoso-b891a734b" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow">↗</span></a>
+      <a href="https://github.com/iomaris" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow">↗</span></a>
+    </div>
+    <div class="foot"><span>© 2026 Mariana Cardoso · Social media em Manaus</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </div>
+</section>
+
+<!-- viewer -->
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Visualizador de posts">
+  <div class="v-card">
+    <div class="v-bars" id="vBars"></div>
+    <div class="v-head">
+      <span class="av"><img id="vAv" src="" alt=""></span>
+      <span><b id="vTitle"></b><small id="vSub"></small></span>
+      <button class="x" type="button" id="vClose" aria-label="Fechar">×</button>
+    </div>
+    <div class="v-media">
+      <button class="v-tap prev" type="button" aria-label="Anterior"></button>
+      <img id="vImg" src="" alt="">
+      <button class="v-tap next" type="button" aria-label="Próximo"></button>
+    </div>
+    <p class="v-cap" id="vCap"></p>
+    <div class="v-nav"><button type="button" id="vPrev">← Anterior</button><button type="button" id="vPause">Pausar</button><button type="button" id="vNext">Próximo →</button></div>
+  </div>
+</div>
+
+<script>
+(() => {
+const R = (n, f) => Array.from({length:n}, (_, i) => f(i + 1));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(pointer: fine)').matches && !reduce;
+
+/* ---------- conteúdo ---------- */
+const SETS = {
+  magProdutos: { title:'MAG · Série de produtos', sub:'7 posts · Instagram', av:'img/mag/story-logo.webp',
+    items: [['Alternador Cummins'],['Alternador ZM'],['Bico injetor Cummins'],['Bico injetor K38'],['Bico injetor NTA855'],['Bico injetor QSK60'],['Turbina KTA']].map(([c],i)=>({src:`img/mag/produto-${i+1}.webp`, cap:c, alt:`Post da MAG: ${c}`})) },
+  aparecida: { title:'MAG · Aviso de feriado', sub:'12 de outubro', av:'img/mag/story-logo.webp',
+    items:[{src:'img/mag/aparecida.webp', cap:'Dia de Nossa Senhora Aparecida: aviso de fechamento e retorno às 7h50.', alt:'Post do Dia de Nossa Senhora Aparecida da MAG'}] },
+  catalogo: { title:'MAG · Catálogo Cummins', sub:'Primeira versão e redesign', av:'img/mag/story-logo.webp',
+    items:[{src:'img/mag/catalogo-v1.webp', cap:'Versão 1: base clara, informações essenciais.', alt:'Catálogo MAG versão 1'},{src:'img/mag/catalogo-v2.webp', cap:'Versão 2: topo escuro, ícones de confiança, 9 marcas e rodapé de contatos.', alt:'Catálogo MAG versão 2'}] },
+  guerra: { title:'Jornal CMC · Guerra e infância', sub:'Carrossel · 6 slides', av:'img/outros/guerra-1.webp', cover:{bg:'#151413',fg:'#f1e8dc',ac:'#ff3b30',name:'Guerra e infância'}, tag:'carrossel',
+    desc:'Carrossel de notícia para o jornal da escola: contexto do conflito e os impactos nas crianças, com fecho em pergunta para gerar comentário.',
+    items: ['Capa: o conflito e seus impactos nas crianças','Contexto histórico em um slide','Efeitos da guerra','Transtornos e sono','Escola, infância e cognição','Pergunta final para engajar'].map((c,i)=>({src:`img/outros/guerra-${i+1}.webp`, cap:c, alt:`Slide ${i+1}: ${c}`})) },
+  ia: { title:'Jornal CMC · O fim do ChatGPT?', sub:'Carrossel · 8 slides', av:'img/outros/ia-1.webp', cover:{bg:'#2d1bb8',fg:'#ffffff',ac:'#5ee6e0',name:'O fim do ChatGPT?'}, tag:'carrossel',
+    desc:'A crise na OpenAI contada em capítulos: início, contratação, conselho, especulação, os dois lados e o futuro. Fecha com chamada para compartilhar, salvar e comentar.',
+    items: ['Capa com pergunta','O início','Contratação','O conselho','Especulação','Dois lados da moeda','O futuro de todos nós','Chamada: compartilhe, salve, comente'].map((c,i)=>({src:`img/outros/ia-${i+1}.webp`, cap:c, alt:`Slide ${i+1}: ${c}`})) },
+  ppgcasa: { title:'PPGCASA · Disciplinas', sub:'Série · 8 posts', av:'img/outros/ppgcasa-1.webp', cover:{bg:'#a8622a',fg:'#fff4e8',ac:'#f6d7b0',name:'Disciplinas do semestre'}, tag:'serie',
+    desc:'Série para divulgar as disciplinas do semestre: um post por disciplina, com professor, datas, horário, carga horária e local sempre na mesma ordem.',
+    items: ['Tópicos Especiais 2: Bioética','Seminários II','Métodos Qualitativos em Ciências Ambientais','Fundamentos de Ciências Ambientais','Agricultura e Ambiente','Etnoconservação e Percepção Ambiental na Amazônia','Sociologia Ambiental','Métodos Quantitativos em Ciências Ambientais'].map((c,i)=>({src:`img/outros/ppgcasa-${i+1}.webp`, cap:c, alt:`Post da disciplina ${c}`})) },
+  intergreve: { title:'Intergreve 2024', sub:'Adesivo e crachá', av:'img/outros/intergreve-1.webp', cover:{bg:'#d10f12',fg:'#ffffff',ac:'#ffd23f',name:'Intergreve 2024'}, tag:'evento',
+    desc:'Identidade para um encontro estudantil: punho erguido, raios e multidão em vermelho. Virou adesivo redondo e crachá com espaço para nome e campus.',
+    items:[{src:'img/outros/intergreve-1.webp', cap:'Adesivo redondo do evento', alt:'Adesivo Intergreve 2024'},{src:'img/outros/intergreve-2.webp', cap:'Crachá: "Do interior à capital, eu defendo a federal"', alt:'Crachá Intergreve 2024'}] },
+  rifa: { title:'Rifa de Formatura', sub:'@informaticus · post', av:'img/outros/rifa.webp', cover:{bg:'#3a1f10',fg:'#f3c66b',ac:'#f3c66b',name:'Rifa de Formatura'}, tag:'evento',
+    desc:'Post de rifa para a formatura da turma de Informática: preço em destaque, data do sorteio enorme e os 6 prêmios em pódio.',
+    items:[{src:'img/outros/rifa.webp', cap:'R$ 5,00 · sorteio 08/08 às 15h · seis prêmios', alt:'Post da Rifa de Formatura'}] },
+  acessorios: { title:"Men's Fashion · 6 acessórios", sub:'Impresso / post A2', av:'img/outros/acessorios.webp', cover:{bg:'#0b0b0c',fg:'#ffffff',ac:'#bdbdc2',name:'6 acessórios básicos'}, tag:'impresso',
+    desc:'Guia editorial em preto e branco: seis acessórios básicos em fotos circulares numeradas, com texto curto para cada um.',
+    items:[{src:'img/outros/acessorios.webp', cap:'Colar, anel, relógio, carteira, boné e pulseira', alt:"Guia Men's Fashion de acessórios básicos"}] },
+  alpha: { title:'AlphaEdu · Logo', sub:'Marca · logo', av:'img/outros/logo-alpha-1.webp', cover:{bg:'#1c2260',fg:'#ffffff',ac:'#2f6bff',name:'AlphaEdu'}, tag:'marca',
+    desc:'Logo para um software educacional: um livro aberto com a letra A e raios de ideia.',
+    items:[{src:'img/outros/logo-alpha-1.webp', cap:'Livro aberto, a letra A e raios de ideia', alt:'Logo AlphaEdu'}] },
+};
+const ORDER_WORKS = ['ia','guerra','ppgcasa','intergreve','rifa','acessorios','alpha'];
+const HIGHLIGHTS = [
+  ['magProdutos','MAG','<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>'],
+  ['catalogo','Catálogo','<path d="M2 5c3-1 6-1 10 1 4-2 7-2 10-1v14c-3-1-6-1-10 1-4-2-7-2-10-1z"/><path d="M12 6v14"/>'],
+  ['aparecida','Avisos','<path d="M3 10v4h3l7 5V5l-7 5z"/><path d="M17 9a4 4 0 0 1 0 6"/>'],
+  ['ia','Carrosséis','<rect x="3" y="7" width="13" height="13" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v11"/>'],
+  ['ppgcasa','Séries','<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'],
+  ['intergreve','Eventos','<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'],
+  ['acessorios','Impressos','<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h8"/>'],
+  ['alpha','Marca','<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>']];
+
+/* ---------- monta destaques, feed, faixa e galeria ---------- */
+const el = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
+const hlRow = document.getElementById('hlRow');
+HIGHLIGHTS.forEach(([k,l,svg]) => hlRow.append(el(`<button class="hl" type="button" data-set="${k}" data-cursor="Ver"><span class="ring"><span><svg viewBox="0 0 24 24" aria-hidden="true">${svg}</svg></span></span>${l}</button>`)));
+
+
+const strip = document.getElementById('magStrip');
+SETS.magProdutos.items.forEach((it,i) => strip.append(el(`<button type="button" data-set="magProdutos" data-i="${i}" data-cursor="Abrir"><img src="${it.src}" alt="${it.alt}" loading="lazy"></button>`)));
+
+const works = document.getElementById('works');
+const card = (k, dup) => { const s = SETS[k], c = s.cover, n = s.items.length;
+  const imgs = s.items.slice(0,3).reverse().map(it => `<img src="${it.src}" alt="" loading="lazy">`).join('');
+  return `<button class="work" type="button" data-set="${k}" data-cursor="Ver" ${dup?'aria-hidden="true" tabindex="-1"':''} style="--cbg:${c.bg};--cfg:${c.fg};--cac:${c.ac}">
+    <span class="cover"><span class="c-name">${c.name}</span><span class="c-stack">${imgs}</span><span class="c-n">${n>1?`${n} ${s.tag==='serie'?'posts':'slides'}`:'1 arte'}</span></span>
+    <h4>${s.title}</h4><p>${s.desc}</p></button>`; };
+// a fila vai duas vezes para o carrossel girar sem emenda
+works.innerHTML = ORDER_WORKS.map(k => card(k)).join('') + ORDER_WORKS.map(k => card(k, true)).join('');
+
+/* ---------- viewer de story ---------- */
+const V = { el:document.getElementById('viewer'), img:document.getElementById('vImg'), bars:document.getElementById('vBars'), cap:document.getElementById('vCap'),
+  t:document.getElementById('vTitle'), sub:document.getElementById('vSub'), av:document.getElementById('vAv'), pauseBtn:document.getElementById('vPause') };
+let cur = null, idx = 0, raf = 0, start = 0, paused = false, elapsed = 0, lastFocus = null;
+const DUR = 5000;
+function show(i){
+  idx = i; const it = cur.items[i];
+  V.img.src = it.src; V.img.alt = it.alt; V.cap.textContent = it.cap;
+  [...V.bars.children].forEach((b,j) => { b.className = j<i ? 'done' : ''; b.firstChild.style.width = j<i ? '100%' : '0'; });
+  elapsed = 0; start = performance.now();
+}
+function tick(now){
+  if (!paused && cur){
+    const p = Math.min((elapsed + now - start) / DUR, 1);
+    const bar = V.bars.children[idx]; if (bar) bar.firstChild.style.width = (p*100)+'%';
+    if (p >= 1){ if (idx < cur.items.length-1) show(idx+1); else { close(); return; } }
+  }
+  raf = requestAnimationFrame(tick);
+}
+function open(key, i=0){
+  cur = SETS[key]; if (!cur) return;
+  lastFocus = document.activeElement;
+  V.t.textContent = cur.title; V.sub.textContent = cur.sub; V.av.src = cur.av;
+  V.bars.innerHTML = cur.items.map(() => '<i><b></b></i>').join('');
+  V.el.hidden = false; requestAnimationFrame(() => V.el.classList.add('open'));
+  document.body.style.overflow = 'hidden';
+  paused = reduce; V.pauseBtn.textContent = paused ? 'Continuar' : 'Pausar';
+  show(+i); cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+  document.getElementById('vClose').focus();
+}
+function close(){
+  cancelAnimationFrame(raf); cur = null; V.el.classList.remove('open');
+  setTimeout(() => { V.el.hidden = true; }, 300);
+  document.body.style.overflow = '';
+  if (lastFocus) lastFocus.focus();
+}
+const step = (d) => { if (!cur) return; const n = idx + d; if (n < 0) show(0); else if (n >= cur.items.length) close(); else show(n); };
+const setPause = (p) => { if (!cur) return; if (p && !paused) elapsed += performance.now() - start; if (!p && paused) start = performance.now(); paused = p; V.pauseBtn.textContent = p ? 'Continuar' : 'Pausar'; };
+document.addEventListener('click', e => { const b = e.target.closest('[data-set]'); if (b && !V.el.contains(b)) open(b.dataset.set, b.dataset.i || 0); });
+document.getElementById('vClose').onclick = close;
+document.getElementById('vPrev').onclick = () => step(-1);
+document.getElementById('vNext').onclick = () => step(1);
+V.el.querySelector('.v-tap.prev').onclick = () => step(-1);
+V.el.querySelector('.v-tap.next').onclick = () => step(1);
+V.pauseBtn.onclick = () => setPause(!paused);
+V.el.addEventListener('click', e => { if (e.target === V.el) close(); });
+document.addEventListener('keydown', e => { if (!cur) return;
+  if (e.key==='Escape') close(); else if (e.key==='ArrowRight') step(1); else if (e.key==='ArrowLeft') step(-1); else if (e.key===' ') { e.preventDefault(); setPause(!paused); }
+  else if (e.key==='Tab'){ const f=[...V.el.querySelectorAll('button')]; const a=f.indexOf(document.activeElement); if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus()} else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus()} } });
+const media = V.el.querySelector('.v-media');
+media.addEventListener('pointerdown', () => setPause(true));
+['pointerup','pointerleave'].forEach(t => media.addEventListener(t, () => { if (!reduce) setPause(false); }));
+let sx = 0; media.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+media.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); }, {passive:true});
+
+/* ---------- personagem: olhos seguem o cursor ---------- */
+const CH = { W:1856, H:2640, eyeX:928, eyeY:650 }, MX = 12, MY = 3;
+const pct = (v, of) => (v/of*100)+'%';
+const charEl = document.getElementById('char');
+const irises = [];
+charEl.querySelectorAll('.eye').forEach(e => {
+  const [x,y,w,h] = e.dataset.box.split(',').map(Number), [ix,iy,s] = e.dataset.iris.split(',').map(Number);
+  Object.assign(e.style, { left:pct(x,CH.W), top:pct(y,CH.H), width:pct(w,CH.W), height:pct(h,CH.H) });
+  const ir = e.querySelector('.iris'); Object.assign(ir.style, { left:pct(ix,w), top:pct(iy,h), width:pct(s,w) }); irises.push(ir);
+});
+const look = (nx, ny) => {
+  irises.forEach(ir => ir.style.transform = `translate(${nx*MX/98*100}%,${ny*MY/98*100}%)`);
+  if (!reduce) charEl.style.transform = `rotate(${nx*1.2}deg) translateX(${nx*6}px)`;
+};
+let lastMove = 0, lf = 0;
+addEventListener('pointermove', e => { lastMove = Date.now(); cancelAnimationFrame(lf); lf = requestAnimationFrame(() => {
+  const r = charEl.getBoundingClientRect(); if (r.bottom < 0) return;
+  const dx = e.clientX - (r.left + CH.eyeX/CH.W*r.width), dy = e.clientY - (r.top + CH.eyeY/CH.H*r.height);
+  const d = Math.hypot(dx,dy) || 1, pull = Math.min(d/260, 1); look(dx/d*pull, dy/d*pull); }); }, {passive:true});
+if (!reduce) setInterval(() => { if (Date.now()-lastMove < 4000) return; const o = [[0,0],[-.9,.2],[.9,.2],[-.5,-.6],[.6,.5],[0,.9]]; const [x,y] = o[Math.floor(Math.random()*o.length)]; look(x,y); }, 2600);
+
+/* ---------- notificações ---------- */
+const notifs = [...document.querySelectorAll('.notif')];
+if (reduce) notifs.forEach(n => n.classList.add('show'));
+else { let k = 0; notifs.forEach((n,i) => setTimeout(() => n.classList.add('show'), 1200 + i*700));
+  setInterval(() => { const n = notifs[k++ % notifs.length]; n.classList.remove('show'); setTimeout(() => n.classList.add('show'), 900); }, 3400); }
+
+/* ---------- direct: conversa digitando ---------- */
+const dm = document.getElementById('dm'), msgs = [...dm.querySelectorAll('.msg')], typing = dm.querySelector('.typing'), replay = dm.querySelector('.replay');
+let dmRunning = false;
+async function playDm(){
+  if (dmRunning) return; dmRunning = true; replay.hidden = true;
+  msgs.forEach(m => m.classList.remove('show'));
+  const wait = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
+  for (const m of msgs){
+    if (m.classList.contains('out')){ dm.insertBefore(typing, m); typing.classList.add('show'); await wait(1200); typing.classList.remove('show'); }
+    else await wait(700);
+    m.classList.add('show');
+  }
+  dm.insertBefore(typing, replay); replay.hidden = false; dmRunning = false;
+}
+replay.onclick = playDm;
+new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting){ playDm(); o.disconnect(); } }), {threshold:.4}).observe(dm);
+
+/* ---------- antes e depois ---------- */
+const ba = document.getElementById('ba');
+ba.querySelector('input').addEventListener('input', e => ba.style.setProperty('--p', e.target.value + '%'));
+
+/* ---------- copiar e-mail ---------- */
+const copyBtn = document.getElementById('copyBtn');
+copyBtn.onclick = () => {
+  const done = () => { copyBtn.textContent = 'E-mail copiado ✓'; setTimeout(() => copyBtn.textContent = 'Copiar e-mail', 2200); };
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('addr')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); copyBtn.textContent = 'Selecionado: use Ctrl+C'; };
+  try { navigator.clipboard.writeText('maryazevedo2036@gmail.com').then(done, sel); } catch { sel(); }
+};
+const talk = document.getElementById('talk');
+talk.innerHTML = [...talk.textContent].map((c,i) => `<span aria-hidden="true" style="transition-delay:${i*22}ms">${c===' '?'&nbsp;':c}</span>`).join('');
+
+/* ---------- rolagem: menu, progresso, linha do tempo ---------- */
+const navLinks = [...document.querySelectorAll('nav.pill a')], slider = document.querySelector('nav.pill .slider');
+const prog = document.getElementById('progress'), tl = document.getElementById('timeline'), fill = tl.querySelector('.fill');
+let active = '';
+function onScroll(){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  prog.style.transform = `scaleX(${max>0 ? scrollY/max : 0})`;
+  let c = ''; navLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s && s.getBoundingClientRect().top <= innerHeight*.35) c = a.getAttribute('href'); });
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) c = '#contato';
+  if (c !== active){ active = c; navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href')===c));
+    const a = navLinks.find(a => a.getAttribute('href')===c);
+    if (a){ slider.style.left = a.offsetLeft+'px'; slider.style.width = a.offsetWidth+'px'; slider.style.opacity = 1; } else slider.style.opacity = 0; }
+  const r = tl.getBoundingClientRect(); fill.style.transform = `scaleY(${Math.min(Math.max((innerHeight*.6 - r.top)/r.height,0),1)})`;
+}
+addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', () => { active=''; onScroll(); }); onScroll();
+
+/* ---------- entrada ao rolar (só o que começa fora da tela) ---------- */
+if (!reduce && 'IntersectionObserver' in window){
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(n => { if (n.getBoundingClientRect().top > innerHeight){ n.classList.add('pre'); io.observe(n); } });
+}
+
+/* ---------- cursor ---------- */
+if (fine){
+  const cur2 = document.querySelector('.cursor'), dot = cur2.firstChild;
+  let x = innerWidth/2, y = innerHeight/2, rx = x, ry = y;
+  addEventListener('pointermove', e => { x = e.clientX; y = e.clientY;
+    const t = e.target.closest('a,button,[data-cursor],input');
+    const lbl = t && t.dataset.cursor || '';
+    cur2.classList.toggle('hover', !!t && !lbl); cur2.classList.toggle('label', !!lbl); dot.textContent = lbl; }, {passive:true});
+  (function loop(){ rx += (x-rx)*.18; ry += (y-ry)*.18; cur2.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+}
+
+/* ---------- celular inclina com o mouse ---------- */
+const ph = document.getElementById('phoneMag');
+if (fine) { ph.addEventListener('mousemove', e => { const r = ph.getBoundingClientRect(); const px = (e.clientX-r.left)/r.width-.5, py = (e.clientY-r.top)/r.height-.5; ph.style.transform = `perspective(1200px) rotateY(${px*8}deg) rotateX(${-py*6}deg)`; });
+  ph.addEventListener('mouseleave', () => ph.style.transform = ''); }
+})();
+</script>
+
+</body>
+</html>
