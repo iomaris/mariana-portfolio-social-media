@@ -209,7 +209,7 @@ section{position:relative}
 .strip img{width:100%;aspect-ratio:1;object-fit:cover}
 
 /* direct */
-.dm{border-radius:22px;background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:340px}
+.dm{border-radius:22px;background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px;min-height:300px}
 .dm-top{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .dm-top .av{width:34px;height:34px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-weight:900;font-size:12px}
 .dm-top b{font-size:14px}.dm-top small{display:block;font-size:11px;color:#2fbf71;font-weight:700}
@@ -222,7 +222,6 @@ section{position:relative}
 .typing i{width:6px;height:6px;border-radius:50%;background:var(--bg);animation:blink 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes blink{50%{opacity:.25}}
-.dm-foot{margin-top:auto;font:500 10px/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 .replay{align-self:flex-start;font-size:13px;font-weight:800}
 
 /* antes e depois */
@@ -522,7 +521,6 @@ section{position:relative}
             <p class="msg out">Perfeito, essa é a peça. Te mando o orçamento pelo WhatsApp em 5 min, pode ser?</p>
             <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
             <button class="replay link-line" type="button" hidden>Ver de novo ↺</button>
-            <p class="dm-foot">Conversa ilustrativa do tipo de atendimento</p>
           </div>
           <p>Meu fluxo: responder rápido, confirmar a referência da peça com o balcão antes de prometer, e levar a negociação para o WhatsApp da loja com tudo anotado.</p>
         </div>
@@ -549,7 +547,7 @@ section{position:relative}
             <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o catálogo antes e depois">
           </div>
         </div>
-        <div class="tile span-5 rv">
+        <div class="tile span-5 rv" style="align-self:start">
           <h5>O que mudou na segunda versão</h5>
           <ol class="changes">
             <li><span><b>Topo escuro com o motor em destaque,</b> para o catálogo chamar atenção no balcão e no WhatsApp.</span></li>
@@ -558,7 +556,7 @@ section{position:relative}
             <li><span><b>Marcas distribuídas em grade:</b> de 4 para 9 logos, incluindo Delphi, Mahle e S&amp;S.</span></li>
             <li><span><b>Rodapé de contatos</b> com endereço, telefones e e-mails separados, fácil de achar.</span></li>
           </ol>
-          <a class="site-card" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer" data-cursor="Abrir" style="margin-top:auto">
+          <a class="site-card" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer" data-cursor="Abrir" style="margin-top:8px">
             <div class="bar"><i></i><i></i><i></i><span>magpecaseservicos.com.br</span></div>
             <div class="body"><b>O mesmo cuidado, agora no site.</b><span class="go">Abrir site <span class="arrow">↗</span></span></div>
           </a>
